@@ -6,7 +6,7 @@
 #
 
 # Inherit from lake device
-$(call inherit-product, device/xiaomi/lake/device.mk)
+
 
 PRODUCT_DEVICE := lake
 PRODUCT_NAME := twrp_lake
