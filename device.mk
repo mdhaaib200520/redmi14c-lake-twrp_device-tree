@@ -6,27 +6,24 @@
 #
 
 LOCAL_PATH := device/xiaomi/lake
-# A/B
+
+# A/B OTA Configuration
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
     FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
 
-# Boot control HAL
+# Boot Control HAL - Shared Library Setup (correct modern format)
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-impl \
-    android.hardware.boot@1.0-service
-
-PRODUCT_PACKAGES += \
-    bootctrl.mt6768
-
-PRODUCT_STATIC_BOOT_CONTROL_HAL := \
+    android.hardware.boot@1.0-service \
     bootctrl.mt6768 \
     libgptutils \
     libz \
     libcutils
 
+# A/B OTA Tools
 PRODUCT_PACKAGES += \
     otapreopt_script \
     cppreopts.sh \
